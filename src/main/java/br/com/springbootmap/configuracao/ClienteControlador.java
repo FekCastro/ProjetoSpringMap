@@ -25,14 +25,13 @@ public class ClienteControlador {
 	   return clienteRepository.findAll();
 	}
 	@GetMapping
-	public Map<Cliente, Integer> findAllMap(){
+	public Map<Integer,Cliente> findAllMap(){
 		
 		List<Cliente> listaCliente = clienteRepository.findAll();
-		Map< Cliente, Integer > clienteMap = new HashMap< Cliente, Integer >();
-		int i = 0;
-		
+		Map<Integer,Cliente> clienteMap = new HashMap<Integer,Cliente>();
+
 		for (Cliente cliente : listaCliente) {
-			clienteMap.put(cliente, i++);
+			clienteMap.put(cliente.getCodigo(), cliente);
 		}
 		
 	   return clienteMap;

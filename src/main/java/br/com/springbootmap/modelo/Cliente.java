@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @EntityScan
 public class Cliente {
-	private long codigo;
+	private Integer codigo;
 	private String pjpf;
 	private String razsoc_nome;
 	private String cnpj_cpf;
